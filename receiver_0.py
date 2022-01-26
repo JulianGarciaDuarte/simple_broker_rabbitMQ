@@ -6,19 +6,12 @@ def main():
     cola = 'queue1'
 
     # PRIMER SUSCRIPTOR
+    def callback_0(ch, method, properties, body):
+         print('El receiver_0 recibió esto:{}'.format(body))
     receiver_0 = Receiver(host)
+    receiver_0.set_callback(callback_0)
     receiver_0.suscribir_cola(cola) 
     receiver_0.listen()
-
-    # SEGUNDO SUSCRIPTOR
-    receiver_1 = Receiver(host)
-    receiver_1.suscribir_cola(cola) 
-    receiver_1.listen()
-
-    # TERCER SUSCRIPTOR
-    receiver_2 = Receiver(host)
-    receiver_2.suscribir_cola(cola) 
-    receiver_2.listen()
 
 if __name__=='__main__':
     try:

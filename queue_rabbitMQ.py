@@ -38,8 +38,10 @@ class Receiver(Actor):
     def __init__(self, host):
         super().__init__(host)
 
-    def callback(self, ch, method, properties, body):
-        print("Mensaje recibido: {}".format(body))
+    def set_callback(self, function):
+        # La funcion callback debe ser definida con los parametros:
+        # ch, method, properties, body
+        self.callback = function
 
     def suscribir_cola(self, queue_name):
         # Se asegura que la cola exista
