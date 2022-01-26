@@ -6,12 +6,12 @@ queue = 'queue1'
 
 # PRIMER PUBLICADOR
 sender_0 = Sender(host) # Se inicia la conexion
-sender_0.send_message('', queue, '¡Enhorabuena un mensaje!') # Se envia el mensaje
+sender_0.send_message('', queue, 'Enhorabuena un mensaje!') # Se envia el mensaje
 sender_0.end_connection() # Se cierra la conexion (necesario por algo de buffers de red y no se que)
 
 # SEGUNDO PUBLICADOR
 sender_1 = Sender(host) # Se inicia la conexion
-sender_1.send_message('', queue, 'Acá el segundo publicador!') # Se envia el mensaje
+sender_1.send_message('', queue, 'Aca el segundo publicador!') # Se envia el mensaje
 sender_1.end_connection() 
 
 # TERCER PUBLICADOR
